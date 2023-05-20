@@ -1,0 +1,35 @@
+@use '../helpers/variables' as *;
+@use '../helpers/responsive' as *;
+
+.heading{
+    position: relative;
+    color: text-color($primary-color);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    text-transform: capitalize;
+    border-left: 10px solid $secondary-color;
+    @include breakpoint(tablet){
+        text-align: center;
+        border: none;
+        &::before{
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 10px;
+            background-color: $secondary-color;
+            transition: $transition;
+            border-radius: 6px;
+          
+
+          
+        }
+        &:hover::before{
+                width: 120px;
+        }
+
+    }
+}

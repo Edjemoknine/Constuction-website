@@ -1,0 +1,19 @@
+@use 'sass/helpers/functions' as *;
+@use 'sass/helpers/mixixn' as *;
+@use 'sass/helpers/variables' as *;
+@use 'sass/bases/bases' as *;
+
+@use 'sass/components/buttons' as *;
+@use 'sass/helpers/responsive';
+@use 'sass/components/section-heading' as *;
+@use 'sass/layout/header' as *;
+@use 'sass/layout/footer' as *;
+@use 'sass/pages/home' as *;
+@use 'sass/pages/about' as *;
+@use 'sass/pages/services' as *;
+@use 'sass/pages/contact' as *;
+@use 'sass/pages/projects' as *;
+@use 'sass/pages/pricing' as *;
+@use 'sass/pages/clients' as *;
+@use 'sass/pages/blogs' as *;
+@use 'sass/theme/theme' as *;

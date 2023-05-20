@@ -1,0 +1,47 @@
+@use '../helpers/variables' as *;
+@use '../helpers/mixixn' as *;
+
+.clients{
+    background-color: $primary-color;
+
+    &__content{
+        // @include grid(300Px,1.5rem);
+     .client{
+    p{
+        position: relative;
+        line-height: 1.7;
+        color: $parg-color;
+        padding: 1rem;
+        background-color: $bg-color;
+        margin-bottom: 2rem;
+        &::after{
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 10px;
+            border: 15px solid transparent;
+            border-color: $bg-color transparent transparent transparent;
+        }
+
+    }
+    &__info{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      
+
+        img{
+            width: 70px;
+        }
+        h4{
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .rate i{
+            color: $secondary-color;
+        }
+    }
+     }
+    }
+
+}

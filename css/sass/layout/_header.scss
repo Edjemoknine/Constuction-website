@@ -1,0 +1,341 @@
+@use '../helpers/variables' as*;
+@use '../helpers/mixixn' as*;
+@use '../helpers/functions' as*;
+@use '../helpers/responsive' as*;
+.header{
+    background-color: $primary-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.2rem 0;
+    z-index: 2;
+    @include shadow(.2);
+
+ 
+    .nav{
+        position: relative;
+        height: 100%;
+        @include flexCenter(row,space-between,0);
+
+        .logo{
+            font-size: 1.7rem;
+            font-weight: weight(normal);
+            cursor: pointer;
+            color: text-colors($bg-color);
+            letter-spacing: 1px;
+
+            span{
+                color: $secondary-color;
+            }
+        }
+      
+     
+        .navbar{
+            display: flex;
+           
+            @include breakpoint(tablet){
+               
+                position: absolute;
+                top: 170%;
+                width: 100%;
+                height: 0px;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: $bg-color;
+                @include shadow(.4);
+               
+                transition: $transition;
+            }
+            &.open{
+                height: 350px;
+                
+            }
+            li{
+                position: relative;
+                padding-left: 35px;
+                display: inline-block;
+                @include breakpoint(tablet){
+                     display: block;
+                     padding-left: 0;
+                     padding: .5rem;
+                  
+                }
+             
+                .link{
+                    display: block;
+                    position: relative;
+                    cursor: pointer;
+                    font-size:1.1rem;
+                    color: text-colors($bg-color);
+                    font-weight: weight(normal);
+                   
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        bottom: -10px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        height: 2px;
+                        width: 0;
+                        background-color: $secondary-color;
+                        transition: $transition;
+                    }
+                    &:hover::after{
+                        width: 80%;
+                    }
+                    &:hover{
+                        color: $secondary-color;
+                    }
+                }
+            }
+            
+            }
+            .links{
+                #menu{
+                    display: none;
+                  @include breakpoint(tablet){
+                    display: inline-flex;
+                  }
+                  
+                }
+                
+               
+                div{
+                    position: relative;
+                    display: inline-flex;
+                    width: 40px;
+                    height: 40px;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: $bg-color;
+                    gap: 10px;
+                    color: text-colors($bg-color);
+                    cursor: pointer;
+                   
+                    &:hover{
+                        color:lighten($primary-color,100%) ;
+                        background-color: $secondary-color;
+                    }
+                }
+            }
+        }
+       
+        // ========================== search=====================
+        .search-form{
+            position: absolute;
+            top: 110%;
+            right: 16%;
+            width: 50%;
+            height: 48Px;
+            background-color: $bg-color;
+            padding: 6px;
+            border-radius: 6px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: $transition;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            @include breakpoint(tablet){
+               width: 90%;
+               right: 5%;
+              }
+            @include shadow(.2);
+           i{
+            padding: 10px;
+            cursor: pointer;
+            &:hover{
+                color: $secondary-color;
+            }
+           }
+            input{
+                width: 100%;
+                height: 100%;
+                padding: 10px;
+                font-size: .95rem;
+            }
+            &.open{
+                opacity: 1;
+                transform: translateY(0px);
+               }
+        }
+       
+    }
+
+    // ************* login**************************
+  
+    .login-form{
+        position: absolute;
+        top: 110%;
+        right: 5%;
+        width: 400px;
+        height: 380Px;
+        background-color: $bg-color;
+        border-radius: 6px;
+        padding: 0.5rem;
+        transform: translateY(-150Px);
+        opacity: 0;
+        pointer-events: none;
+        transition: $transition;
+        @include shadow(.2);
+        z-index: 20;
+
+      
+
+        &.open{
+            pointer-events: visible;
+            opacity: 1;
+            transform: translateY(0px);
+           }
+        form{
+            h3{
+                text-align: center;
+                font-size: 2rem;
+                font-weight: weight(bold);
+                // margin-bottom: 1rem;
+                span{
+                    color: $secondary-color;
+                }
+            }
+           width: 100%;
+           height: 100%;
+           display: flex;
+           flex-direction: column;
+           padding:0 1rem 1rem;
+           background-color: lighten($bg-color, 5%);
+           label{
+            font-weight: weight(normal);
+            margin-bottom: 0.1rem;
+           }
+           .input{
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1.25rem;
+           }
+          
+           .help{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+            div{
+                display: flex;
+               span{
+                   font-size: .9rem;
+                   padding-left: .5rem;
+                    }
+            }
+           
+           .second{
+            font-size: .9rem;
+            a{
+                color: $secondary-color;
+            }
+           }
+           }
+
+
+           a.btn{
+            width: 100%;
+            text-align: center;
+            background-color: $bg-color;
+            color: $text-color;
+            padding: 0.5rem 1.5rem;
+            margin: 1rem auto;
+            // border-radius: 6px;
+            transition: $transition;
+            &:hover{
+                background-color: $secondary-color;
+                color: white;
+            }
+           }
+        }
+       
+    }
+   
+// ============================= contact info =====================
+
+.contact-info{
+    position: absolute;
+    right: -100%;
+    top: 0;
+    width: 300Px;
+    height: 100vh;
+    background-color: $primary-color;
+    z-index: 20;
+    padding: 1rem;
+    transition: $transition;
+    @include shadow(.2);
+
+    &.open{
+        right: 0;
+        box-shadow:0 0 0 100vw rgba($color: #000000, $alpha: .7);
+        }
+
+    .close{
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+        font-size: 1.5rem;
+        font-weight: weight(bold);
+        cursor: pointer;
+
+        &:hover,&:active{
+            color: darken($secondary-color,10%);
+        }
+    }
+    .contact__address{
+        padding-top: 4rem;
+        div{
+            text-align: center;
+            &:not(:last-of-type){
+                margin-bottom: 2rem;
+            }
+            a{
+                font-size: 1rem;
+                margin-bottom: .5rem;
+                width: 40px;
+                height: 40Px;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+               background-color: $bg-color;
+               color: text-colors($bg-color);
+
+                &:hover{
+                    color:darken( $secondary-color,7%);
+                    background-color:text-colors($bg-color);
+                }
+            }
+            h3{
+                font-weight: weight(normal);
+                margin-bottom: .5rem;
+                color: darken($bg-color,90%);
+            }
+            span{
+                display: block;
+                color: darken($bg-color,50%);
+                font-weight: weight(regular);
+            }
+
+        }
+        .socials{
+            padding-top: 3rem;
+            a{
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.3rem;
+                margin-right: 5px;
+              
+
+            }
+        }
+    }
+   
+}

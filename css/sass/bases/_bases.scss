@@ -1,0 +1,54 @@
+@use '../helpers/variables' as *;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    outline: none;
+    border: none;
+    text-decoration: none;
+   
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+img{
+    max-width: 100%;
+  
+ }
+html{
+    scroll-behavior: smooth;
+}
+body{
+    
+    background-color: lighten($primary-color, 70%);
+    color:text-colors($bg-color);
+    line-height: 1.5;
+ 
+}
+
+.container{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+section{
+    padding:3rem 0 1.5rem ;
+}
+
+
+// =======================================
+
+::-webkit-scrollbar{
+    width: 7px;
+    border-radius: 20px;
+   
+
+    &-thumb{
+        background-color: $secondary-color;
+        border-radius: 20px;
+    }
+   
+}
+
+
+

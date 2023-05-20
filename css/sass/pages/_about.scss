@@ -1,0 +1,74 @@
+@use '../helpers/mixixn' as *;
+@use '../helpers/variables' as *;
+@use '../helpers/responsive' as *;
+.about{
+    padding-bottom: 5rem;
+   
+    &__content{
+        padding-top: 2rem;
+        @include flexCenter(row,center,4rem);
+         @include breakpoint(tablet){
+            flex-direction: column;
+            text-align: center;
+         }
+        .video-content{
+            flex: 1;
+            position: relative;
+            height: 100%;
+            background-color: $secondary-color;
+          
+            
+            .vid{
+                position: relative;
+                top: -20px;
+                left: 20px;
+                width: 100%;
+                @include breakpoint(tablet){
+                   top: 0;
+                   left: 0;
+                 }
+                
+            }
+         
+    
+        }
+        .content__text{
+            
+            flex: 1;
+           h2{
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+           }
+           p{
+            font-size: 1rem;
+            line-height: 1.8;
+            color: $parg-color;
+            margin-bottom: 2rem;
+           }
+            
+        }
+    
+    }
+    &__resultats{
+        @include grid(250px ,1.5rem);
+    padding-top: 2rem;
+        .box{
+            background-color: $bg-color;
+            padding: 1.5rem;
+            text-align: center;
+            h2{
+                font-size: 2.2rem;
+                font-weight: weight(bolder);
+                color:$text-color ;
+                margin-bottom: .5rem;
+            }
+            p{
+                font-size: 1rem;
+                line-height: 1.8;
+                color: $parg-color;
+               
+               }
+        }
+    }
+}

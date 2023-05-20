@@ -1,0 +1,27 @@
+@use '../helpers/variables' as *;
+@use '../helpers/mixixn' as *;
+.btn{
+    font-size: 1rem;
+    font-weight: weight(medium);
+    background-color:darken($primary-color,100%);
+    color:$bg-color ;
+    padding: 0.5rem 1.25rem;
+    position: relative;
+    @include shadow(.3);
+    transition: $transition;
+    display: inline-block;
+    z-index: 1;
+    &::before{
+      content: '';
+      @include overlay(0,0,100%,$secondary-color,1);
+      transition:$transition;
+    
+    }
+    &:hover{
+      color: $primary-color;
+  }
+  &:hover::before{
+      width: 100%;
+  }
+}
+

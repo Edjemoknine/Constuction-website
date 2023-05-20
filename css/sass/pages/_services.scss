@@ -1,0 +1,40 @@
+@use '../helpers/variables' as *;
+@use '../helpers/mixixn' as *;
+.services{
+    background-color: $bg-color;
+
+    &__content{
+        @include grid(250px,1.5rem);
+    }
+
+    &__box{
+        background-color: $primary-color;
+        @include shadow(.2);
+        padding: 1.5rem;
+        text-align: center;
+        cursor: pointer;
+        border: 2px solid darken($primary-color,20%);
+        &:hover i{
+            transform: translateY(-7px);
+            color: $secondary-color;
+        }
+        i{
+            font-size: 3.5rem;
+            display: block;
+            position: relative;
+            margin-bottom: 1rem;
+            transition: $transition;
+       
+        }
+        h3{
+            font-size: 1.2rem;
+            margin-bottom: .75rem;
+            color: $text-color;
+        }
+        p{
+            line-height: 1.7;
+            color: $parg-color;
+            margin-bottom: .5rem;
+        }
+    }
+}

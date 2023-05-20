@@ -1,0 +1,60 @@
+@use '../helpers/variables' as *;
+@use '../helpers/mixixn' as *;
+.projects{
+    background-color: $text-color;
+    .heading{
+        color: $primary-color;
+    }
+    &__content{
+        @include grid(20rem,10px);
+       
+    }
+   
+}
+
+.projects__box{
+       
+    cursor: pointer;
+   
+    &:hover img{
+      transform: scale(1.1);
+    }
+}
+
+.image{
+    height: 30rem;
+    overflow: hidden;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: $transition;
+    }
+}
+
+.add-project{
+    display: flex;
+    justify-content: space-between;
+    background-color: $primary-color;
+    height: 80px;
+    div{
+        padding: 1rem;
+        h3{
+            color: $text-color;}
+        p{
+            color: $parg-color;
+            font-size: 1rem;
+            margin-bottom: .5rem;
+        }
+    }
+    i{
+        line-height: 80Px;
+        font-size: 1.5rem;
+        text-align: center;
+        color: $primary-color;
+        font-weight: weight(bold);
+      width: 70px;
+      height: 100%;
+      background-color:$secondary-color;
+    }
+}

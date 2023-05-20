@@ -1,0 +1,22 @@
+@use '../helpers/variables' as *;
+@use '../helpers/mixixn' as *;
+
+.footer{
+    background-color: $primary-color;
+    .marque{
+        margin-bottom: 4rem;
+    }
+    .pages{
+        @include flexCenter(row,center,1rem);
+        flex-wrap: wrap;
+    }
+    .created{
+        text-align: center;
+        padding: 2.5rem 0rem 0;
+        font-weight: 600;
+        font-size: 1rem;
+        span{
+            color: $secondary-color;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@use '../helpers/variables' as *;
+@use '../helpers/mixixn' as *;
+.pricing{
+    background-color: $bg-color;
+    &__content{
+        @include grid(300Px,1.5rem);
+    }
+    &__plan{
+        text-align: center;
+        background-color: $primary-color;
+        padding: 1.5rem;
+        border: 1px solid darken($primary-color,25%);
+        a:not(.btn){
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px ;
+            height: 70px;
+            border-radius: 50%;
+            margin-bottom: 1Rem;
+            background-color: $secondary-color;
+            i{
+                color:$text-color ;
+                font-size: 1.7rem;
+            }
+        }
+        h3{
+            font-weight: 500;
+           
+        }
+        h2{
+            font-size: 3.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            span{
+                font-size: 1.3rem;
+            }
+        }
+        li{
+            padding-bottom: 1rem;
+        }
+    }
+    a{
+        margin-top: .5rem;
+       
+    }
+}

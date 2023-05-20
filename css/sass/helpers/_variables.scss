@@ -1,0 +1,54 @@
+@use 'mixixn' as*;
+@use 'responsive'as*;
+
+//===========================colors======================
+
+$primary-color:#fdfdfd;
+$secondary-color:rgb(255, 228, 22);
+$bg-color:rgb(231, 231, 238);
+$text-color:darken($primary-color,85%);
+$parg-color:darken($primary-color,50%);
+
+$transition:.4s ease;
+
+:root{
+    --fs-h1:clamp(40px,5vw,100px);
+    --fs-h2:2rem;
+    --fs-h3:1.3rem;
+    --fs-link:1.1rem;
+}
+
+@include breakpoint(phone){
+    :root{
+      
+        --fs-h2:1.5rem;
+        --fs-h3:1.1rem;
+        --fs-link:1rem;
+    }
+}
+ 
+
+// =========================== color map============================
+
+
+$colors:(
+    primary:rgb(0, 98, 255),
+    accent:rgb(240, 245, 151),
+    light-blue:lighten(rgb(0, 98, 255),40%),
+    gralish-blue:darken(rgb(0, 98, 255),40%),  
+);
+
+// ========================Font-Weight===========================
+
+$font-weight:(
+    'small':100,
+   'regular':400,
+   'normal':500,
+   'medium':600,
+   'bold':700,
+   'bolder':900,
+);
+
+// =========================Fonts=========================
+$default-font:16px;
+

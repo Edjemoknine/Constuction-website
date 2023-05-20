@@ -1,0 +1,12 @@
+@use '../helpers/variables'as *;
+@use '../helpers/functions'as *;
+// ============================ mixin Theme ====================
+@mixin theme($light:true){
+    @if $light{
+    background-color: lighten($primary-color,100%);
+    color: darken($primary-color,100%);
+}}
+
+.themes{
+@include theme($light:true);
+}
